@@ -1,0 +1,122 @@
+body {
+	background-color: #cccccc;
+}
+#main_Container {
+	padding-top: 5%;
+}
+.container-fluid {
+	padding: 0;
+}
+.col_centered {
+	border-width: 1px;
+	border-style: solid;
+	background-color: #ffffff;
+	box-shadow: 10px 10px 5px #999999;
+	padding: 0;
+	float: none;
+	margin: 0 auto;
+}
+/*****************
+======Header======
+******************/
+#header {
+	background-color: #4682b4;
+	color: #fff;
+	
+}
+#header h1 {
+	text-align: center;
+	font-weight: bold;
+}
+/***********************
+======Main Content====== 
+************************/
+
+/********************
+------ToDo List------
+*********************/
+#todoList {
+	list-style: none;
+}
+
+#todo_List_Container {
+	
+	height: 350px;
+	overflow: auto;
+}
+
+#todo_List_Container ul {
+	padding: 0;
+	margin: 0;
+}
+
+#todoList li {
+	padding: 10px 10px;
+}
+
+#todoList li .text_label {
+	padding-left: 25px;
+}
+#todoList li.odd {
+	background-color: #fff;
+}
+
+#todoList li.even {
+	background-color: #f2f2f2;
+}
+.finish_true {
+	text-decoration: line-through;
+}
+
+.fa-trash-o {
+	color: #ff0000;
+	cursor: pointer;
+}
+
+/********************
+------ToDo Form------
+*********************/
+#input_todo {
+	height: 45px;
+	width: 70%;
+	float: left;
+
+}
+#add_button {
+	height: 45px;
+	width: 30%;
+	background-color: #ee4466;
+	color: #fff;
+	border: none;
+	border-radius: none;
+}
+
+/*****************
+======Footer======
+******************/
+#footer {
+	position: relative;
+	background-color: #7ea9cd;
+	color: #162737;
+	font-size: 12px;
+	padding: 15px 0;
+}
+
+#completed_task {
+	position: absolute;
+	top: 7px;
+	left: 5px;
+}
+#completed_task .bold {
+	font-weight: bold;
+}
+#clear_task {
+	position: absolute;
+	padding: 2px 5px;
+	top: 5px;
+	right: 5px;
+	text-decoration: none;
+	background-color: #f46547;
+	color: #fff;
+	
+}

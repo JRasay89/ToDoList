@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> ToDo List </title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- AngularJS library -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<!-- Font awesome icons -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- My CSS -->
+		<link rel="stylesheet" href="css/myStyle.css" >
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myCtrl" class="container" id="main_Container">
+			<div class="col-xs-12 col-md-12 col-lg-6 col_centered">
+				<div class="container-fluid" id="header">
+					<h1>ToDo List</h1>
+				</div>
+				<div class="container-fluid" id="main_content">
+					<div id="todo_List_Container">
+						<ul id="todoList">
+							<li ng-class-even="'even'" ng-class-odd="'odd'" ng-repeat="todo in todoList">
+								<input ng-model="todo.finish" type="checkbox"></input>
+								<span class="finish_{{todo.finish}} text_label">{{todo.text}}</span>
+								<span class="pull-right"><i ng-click="removeTodo(index)" class="fa fa-lg fa-trash-o"></i></span>
+							</li>
+						</ul>
+					</div>
+					<form>
+						<input ng-model="todoText" placeholder="Enter a todo item" type="text" class="" id="input_todo">
+						<button ng-click="addTodo()" id="add_button"><span><i class="fa fa-lg fa-plus"></i></span> Add</button>
+					</form>
+				</div>
+				<div class="container-fluid" id="footer">
+					<p id="completed_task"><span class="bold">Completed:</span> <span>{{getClearedCount()}}</span> out of <span>{{getTotalTodos()}}</span> task</p>
+					<a href="#" ng-click="removeClearedTodos()" ng-show="hasClearedTodos()" id="clear_task">
+						Clear <span>{{getClearedCount()}} {{itemText()}}</span>  
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modules -->
+		<script src="js/myApp.js"></script>
+		<!-- Controllers -->
+		<script src="js/myController.js"></script>
+	</body>
+</html>
