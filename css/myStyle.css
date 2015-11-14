@@ -80,6 +80,7 @@ body {
 	height: 45px;
 	width: 70%;
 	float: left;
+	border-radius: none;
 
 }
 #add_button {
