@@ -23,10 +23,21 @@
 				<div class="container-fluid" id="header">
 					<h1>ToDo List</h1>
 				</div>
+				<div class="container-fluid" id="filter_menu">
+					<div id="markAll">
+						<input ng-model="markAll" ng-click="markAllToggle()" type="checkbox"></input>
+						<span> Mark All </span>
+					</div>
+					<ul class="{{active}}" id="filter_tabs" ng-click="$event.preventDefault()">
+						<li id="all"><a ng-click="myFilter = null; active = 'all'" href="#" >All</a></li>
+						<li id="in_progress"><a ng-click="myFilter = {finish: false}; active = 'in_progress'" href="#" >In progress</a></li>
+						<li id="completed"><a ng-click="myFilter = {finish: true}; active = 'completed'" href="#" >Completed</a></li>
+					</ul>
+				</div>
 				<div class="container-fluid" id="main_content">
 					<div id="todo_List_Container">
 						<ul id="todoList">
-							<li ng-class-even="'even'" ng-class-odd="'odd'" ng-repeat="todo in todoList">
+							<li ng-class-even="'even'" ng-class-odd="'odd'" ng-repeat="todo in todoList | filter: myFilter">
 								<input ng-model="todo.finish" type="checkbox"></input>
 								<span class="finish_{{todo.finish}} text_label">{{todo.text}}</span>
 								<span class="pull-right"><i ng-click="removeTodo(index)" class="fa fa-lg fa-trash-o"></i></span>

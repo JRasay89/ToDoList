@@ -1,5 +1,6 @@
 app.controller("myCtrl", function($scope) {
 	$scope.todoList = [];
+	$scope.active = "all";
 	
 	$scope.addTodo = function() {
 		if ($scope.todoText) {
@@ -26,11 +27,13 @@ app.controller("myCtrl", function($scope) {
 	}
 	
 	$scope.hasClearedTodos = function() {
-		if ($scope.getClearedCount() > 0) {
-			return true;
-		}
-		else {
-			return false;
+		if ($scope.active == "all" || $scope.active == "completed") {
+			if ($scope.getClearedCount() > 0) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 	
@@ -55,5 +58,11 @@ app.controller("myCtrl", function($scope) {
 		else {
 			return "item";
 		}
+	}
+	
+	$scope.markAllToggle = function() {
+		angular.forEach($scope.todoList, function(todo) {
+			todo.finish = $scope.markAll;
+		});
 	}
 });

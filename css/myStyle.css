@@ -28,6 +28,42 @@ body {
 	text-align: center;
 	font-weight: bold;
 }
+
+/***********************
+======Filter Tabs======
+************************/
+#filter_menu {
+	padding: 0 10px;
+	background-color: #5a91bf;
+}
+#markAll,
+#filter_tabs a {
+	color: #fff;
+}
+#markAll {
+	position: relative;
+	top: 5px;
+	float: left;
+}
+#filter_menu ul  {
+	position: relative;
+	top: 5px;
+	float: right;
+}
+#filter_menu ul li {
+	display: inline-block;
+	padding: 0 30px;
+	list-style: none;
+}
+#filter_tabs a {
+	text-decoration: none;
+}
+
+ul.all #all,
+ul.in_progress #in_progress,
+ul.completed #completed {
+	background-color:#ee4466;
+}
 /***********************
 ======Main Content====== 
 ************************/
