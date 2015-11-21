@@ -24,15 +24,15 @@
 					<h1>ToDo List</h1>
 				</div>
 				<div class="container-fluid" id="filter_menu">
-					<div id="markAll">
-						<input ng-model="markAll" ng-click="markAllToggle()" type="checkbox"></input>
-						<span> Mark All </span>
-					</div>
 					<ul class="{{active}}" id="filter_tabs" ng-click="$event.preventDefault()">
-						<li id="all"><a ng-click="myFilter = null; active = 'all'" href="#" >All</a></li>
-						<li id="in_progress"><a ng-click="myFilter = {finish: false}; active = 'in_progress'" href="#" >In progress</a></li>
-						<li id="completed"><a ng-click="myFilter = {finish: true}; active = 'completed'" href="#" >Completed</a></li>
+						<li id="all" class="col-xs-3 col-sm-2 col-lg-2"><a ng-click="myFilter = null; active = 'all'" href="#" >All</a></li>
+						<li id="to_do" class="col-xs-3 col-sm-2 col-lg-2"><a ng-click="myFilter = {finish: false}; active = 'to_do'" href="#" >To do</a></li>
+						<li id="completed" class="col-xs-6 col-sm-2 col-lg-2"><a ng-click="myFilter = {finish: true}; active = 'completed'" href="#" >Completed</a></li>
 					</ul>
+				</div>
+				<div class="container-fluid" id="markAll">
+					<input ng-model="markAll" ng-click="markAllToggle()" type="checkbox"></input>
+					<span> Mark All </span>
 				</div>
 				<div class="container-fluid" id="main_content">
 					<div id="todo_List_Container">

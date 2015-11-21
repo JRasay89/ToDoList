@@ -33,37 +33,40 @@ body {
 ======Filter Tabs======
 ************************/
 #filter_menu {
-	padding: 0 10px;
 	background-color: #5a91bf;
 }
-#markAll,
 #filter_tabs a {
 	color: #fff;
 }
-#markAll {
-	position: relative;
-	top: 5px;
-	float: left;
-}
+
 #filter_menu ul  {
 	position: relative;
-	top: 5px;
-	float: right;
+	padding: 0;	
 }
 #filter_menu ul li {
 	display: inline-block;
-	padding: 0 30px;
+	padding: 5px 0;
 	list-style: none;
+	text-align: center;
+
 }
 #filter_tabs a {
 	text-decoration: none;
 }
 
 ul.all #all,
-ul.in_progress #in_progress,
-ul.completed #completed {
+ul.to_do #to_do,
+ul.completed #completed{
 	background-color:#ee4466;
 }
+
+/*******************
+======Mark All====== 
+********************/
+#markAll {
+	padding: 10px 10px;
+}
+
 /***********************
 ======Main Content====== 
 ************************/
