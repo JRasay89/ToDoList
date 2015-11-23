@@ -20,22 +20,26 @@
 	<body ng-app="myApp">
 		<div ng-controller="myCtrl" class="container" id="main_Container">
 			<div class="col-xs-12 col-md-12 col-lg-6 col_centered">
+				<!-- Title -->
 				<div class="container-fluid" id="header">
 					<h1>ToDo List</h1>
 				</div>
+				<!-- Filter Menu -->
 				<div class="container-fluid" id="filter_menu">
-					<ul class="{{active}}" id="filter_tabs" ng-click="$event.preventDefault()">
-						<li id="all" class="col-xs-3 col-sm-2 col-lg-2"><a ng-click="myFilter = null; active = 'all'" href="#" >All</a></li>
-						<li id="to_do" class="col-xs-3 col-sm-2 col-lg-2"><a ng-click="myFilter = {finish: false}; active = 'to_do'" href="#" >To do</a></li>
-						<li id="completed" class="col-xs-6 col-sm-2 col-lg-2"><a ng-click="myFilter = {finish: true}; active = 'completed'" href="#" >Completed</a></li>
+					<ul class="{{activeTab}}" id="filter_tabs" ng-click="$event.preventDefault()">
+						<li id="all" class="col-xs-3 col-sm-2 col-lg-2"><a ng-click="myFilter = null; activeTab = 'all'" href="#" >All</a></li>
+						<li id="to_do" class="col-xs-3 col-sm-2 col-lg-2"><a ng-click="myFilter = {finish: false}; activeTab = 'to_do'" href="#" >To do</a></li>
+						<li id="completed" class="col-xs-6 col-sm-2 col-lg-2"><a ng-click="myFilter = {finish: true}; activeTab = 'completed'" href="#" >Completed</a></li>
 					</ul>
 				</div>
+				<!-- Mark All Toggle -->
 				<div class="container-fluid" id="markAll">
 					<input ng-model="markAll" ng-click="markAllToggle()" type="checkbox"></input>
 					<span> Mark All </span>
 				</div>
+				<!-- Main List Content -->
 				<div class="container-fluid" id="main_content">
-					<div id="todo_List_Container">
+					<div class="custom_scrollbar" id="todo_List_Container">
 						<ul id="todoList">
 							<li ng-class-even="'even'" ng-class-odd="'odd'" ng-repeat="todo in todoList | filter: myFilter">
 								<input ng-model="todo.finish" type="checkbox"></input>
@@ -49,6 +53,7 @@
 						<button ng-click="addTodo()" id="add_button"><span><i class="fa fa-lg fa-plus"></i></span> Add</button>
 					</form>
 				</div>
+				<!-- Completed Task and Clear button -->
 				<div class="container-fluid" id="footer">
 					<p id="completed_task"><span class="bold">Completed:</span> <span>{{getClearedCount()}}</span> out of <span>{{getTotalTodos()}}</span> task</p>
 					<a href="#" ng-click="removeClearedTodos()" ng-show="hasClearedTodos()" id="clear_task">
